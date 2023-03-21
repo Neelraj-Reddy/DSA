@@ -10,18 +10,34 @@ int main(){
     scanf("%d",&n);
     int *arr;
     arr=malloc(sizeof(int)*n);
+
     for (i=0;i<n;i++){
         printf("enter element %d : ",i+1);
         scanf("%d",&arr[i]);
     }
+
     display(arr,n);
     printf("\n");
-    printf("enter position to insert (positioning starts from 0) : ");
+    printf("enter positiont to insert (1. start , 2. specific ,3. end) : ");
     scanf("%d",&pos);
+
+    if (pos==1){
+        pos=0;
+      }
+    else if(pos==2){
+        printf("indexing starts from 0 . \nenter specific position : ");
+        scanf("%d",&pos);
+    }
+    else if(pos==3){
+        pos=n;
+    }
+    else
+    ("enter wrong option printed");
+
     printf("enter element to insert : ");
     scanf("%d",&ele);
+    
     n=insert(arr,n,pos,ele);
-    printf("%d \n",n);
     display(arr,n);
 }
 
@@ -35,7 +51,7 @@ void display(int *arr,int n){
 int insert(int* arr,int n,int pos,int ele){
     int i=n;
     realloc(arr,sizeof(int)*(n+1));
-    while(i!=0){
+    while(i>=0){
         if (i!=pos){
             arr[i]=arr[i-1];
         }
