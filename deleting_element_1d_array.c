@@ -12,7 +12,7 @@ int main(){
     arr=malloc(sizeof(int)*n);
 
     for (i=0;i<n;i++){
-        printf("enter element %d : ",i+1);
+        printf("enter element %d : ",i);
         scanf("%d",&arr[i]);
     }
 
